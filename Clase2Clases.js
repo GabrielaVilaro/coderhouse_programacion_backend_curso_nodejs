@@ -1,3 +1,14 @@
+/* Desarrollar una herramienta que permita llevar cuentas a las personas:
+
+1) Definir clase Contador
+2) Cada instancia debe ser identificada con el nombre del resposable
+3) Cada instancia inicia su cuenta en cero
+4) La clase debe llevar un valor estárico en cero
+5) Definir un método que devuelva el nombre del Resposable  
+6) Definir un método que retorne la cuenta individual
+7) Definir un método que retorne la cuenta global 
+8) Definir un metodo contar que incremente en uno las dos cuentas */
+
 class Contador {
     constructor({responsable}){
         this.contador = 0;

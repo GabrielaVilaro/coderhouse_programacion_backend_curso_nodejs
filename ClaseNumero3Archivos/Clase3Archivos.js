@@ -1,3 +1,10 @@
+/* Implementar una clase Contenedor de manejo de archivos, usar promesas, async, await, modulo fs.
+1) Implementar el método Save, recibe un objeto, lo guarda en el archivo productos.txt
+2) GetById, trae un producto por d
+3) GetAll, devuelve todo lo del archivo
+4) deletedById, borra según id del producto
+5) deletedAll, borra el archivo */
+
 const fs = require("fs");
 
 class Contenedor {

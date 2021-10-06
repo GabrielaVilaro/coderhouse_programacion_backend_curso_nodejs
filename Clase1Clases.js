@@ -1,3 +1,8 @@
+/* 1) Declarar una clase usuario
+   2) Agregarle los atributos Nombre, apellido, libros y mascotas
+   3) Definir un método que retorne el nombre y appellido, otro que agrege una mascota al array, 
+   uno que cuente la cantidad de mascotas, uno que agregue un libro y otro que los muestre todos */
+
 class User {
     constructor({name, lastname, books, pets}) {
       this.name = name;
