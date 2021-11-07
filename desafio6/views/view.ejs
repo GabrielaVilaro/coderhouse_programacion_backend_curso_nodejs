@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla dnámica</title>
+
+    <body>
+        <section class="form">
+        <ul class="list-group">
+            <% for(var i=0; i<productos.length; i++) {%>
+                <li class="list-group-item">
+                    <span>ID: </span><%= productos[i].id %>
+                    <br/>
+                    <span> Titulo: </span><%= productos[i].title %>
+                     <span> Precio: </span><%= productos[i].price %>
+                    <br/>
+                    <span> Imagen: </span><%= productos[i].file %>
+                </li>
+            <% } %>
+        </ul>
+        </section>
+    </body>
+
+</head>

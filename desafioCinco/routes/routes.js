@@ -10,8 +10,35 @@ que incorpore las siguientes rutas:
 
 const express = require('express');
 const router = express.Router();
+const multer = require("multer");
+const path = require("path");
+const { uuid } = require('uuidv4');
 
 let ARRAY_PRODUCTS = [];
+
+let storage = multer.diskStorage({
+  destination: path.join(__dirname, './uploads/photos'),
+  filename: (req, file, cb)=>{
+      cb(null, `${uuid()}-${file.originalname}`);
+  }
+})
+let midMulter = multer({
+      storage,
+      dest: path.join(__dirname, './uploads/photos'),
+      limits:{fieldSize:1000000000}
+  });
+
+  router.post("/api/archivo", (req, res)=>{
+    let {tipo} = req.params;
+    router.use(midMulter.array("files"));
+    console.log(req.file);
+    let response = false;
+    if(obj.hasOwnProperty(tipo)){
+        response = obj[tipo].push(objAdd);
+    if (data.form === "1") return res.redirect('http://localhost:8080/web');
+    }
+    res.json(obj[tipo]);
+});
 
 router.get("/", (req, res) => {
     const products = ARRAY_PRODUCTS;
@@ -42,7 +69,7 @@ router.get("/", (req, res) => {
         id: id,
         title: data.title,
         price: parseInt(data.price),
-        thumbnail: data.thumbnail,
+        file: data.file,
     });
     if(newProduct) {
       if (data.form === "1") return res.redirect('http://localhost:8080/web');

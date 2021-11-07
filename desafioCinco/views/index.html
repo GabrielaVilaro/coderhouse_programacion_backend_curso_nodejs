@@ -25,14 +25,15 @@
             <br>
             <input type="number" name="price">
         </div>
-        <div>
-            <label for="name">Imagen</label>
-            <br>
-            <input type="text" name="thumbnail">
-        </div>
+        <form style="width: 40%;" action="http://localhost:8080/api/productos/archivo" method="POST" enctype="multipart/form-data" name="upload_img_form">
+            <div class="mb-3">
+                <label class="form-label" for="customFile">Imagen</label>
+                <input type="file" class="form-control" id="customFile" name="file"/>
+                <br>
+            </div>
+            <button type="submit" class="btn btn-primary">Ingresar Producto</button>
+        </form>
         <input type="hidden" name="form" value="1" />
-        <br>
-        <button>INGRESAR PRODUCTO</button>
     </form>
 </body>
 </html>
